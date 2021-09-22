@@ -6,6 +6,48 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <!--<link href="layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">-->
   <style type="text/css">
+.container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.single-features {
+    padding: 40px 20px 52px;
+    background-color: #fff;
+}
+.horizontal-row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+.justify-content-center {
+    -ms-flex-pack: center!important;
+    justify-content: center!important;
+}
+.col-lg-4 {
+    -ms-flex: 0 0 25%;
+    flex: 0 0 25%;
+    max-width: 13.33333%;
+    margin: 0 25px 0 25px;
+}
+.single-features .features-content .text {
+    font-size: 14px;
+    line-height: 20px;
+    color: #121212;
+    margin-top: 16px;
+}
+.single-features .features-content .features-btn {
+    color: #0067f4;
+    font-size: 16px;
+    font-weight: 700;
+    margin-top: 29px;
+}
+a:hover img{filter:alpha(Opacity=50);-moz-opacity:0.5;opacity: 0.5}
 /* Style the video: 100% width and height to cover the entire window */
 #myVideo {
   position: relative;
@@ -91,11 +133,7 @@ a{outline:none; text-decoration:none;}
 img{width:auto; max-width:100%; height:auto; margin:0; padding:0; border:none; line-height:normal; vertical-align:middle;}
 .imgl{margin:0 15px 10px 0; clear:left;}
 .imgr{margin:0 0 10px 15px; clear:right;}
-.imgover{display:inline-block; position:relative; max-width:100%;}
-.imgover::before, .imgover::after{display:block; position:absolute; content:""; text-align:center; opacity:0;}
-.imgover::before{top:0; right:0; bottom:0; left:0;}
-.imgover::after{top:50%; left:50%; width:50px; height:50px; line-height:50px; margin:-25px 0 0 -25px; font-family:"Font Awesome 5 Free"; font-weight:900; content:"\f06e";/* fa-eye */ font-size:28px;}
-.imgover:hover::before, .imgover:hover::after{opacity:1;}
+
 
 
 /* Fonts
@@ -333,7 +371,6 @@ address, article, aside, figcaption, figure, footer, header, main, nav, section{
 #footer .latestimg > li:nth-last-child(-n+3){margin-bottom:0;}/* Removes bottom margin from the last three items - margin is restored in the media queries when items stack */
 #footer .latestimg > li:nth-child(3n+1){margin-left:0; clear:left;}/* Removes the need to add class="first" */
 #footer .latestimg > li img{width:100%;}/* Force the image to resize to take the full space - may have to be changed for tablets, depends on personal preference */
-#footer .latestimg > li a.imgover{display:block;}
 
 
 /* Copyright
@@ -377,7 +414,6 @@ nav ul, nav ol{margin:0; padding:0; list-style:none;}
 #mainav li li a{border:solid; border-width:0 0 1px 0;}
 #mainav .drop{padding-left:15px;}
 #mainav li li a, #mainav li li .drop{display:block; margin:0; padding:10px 15px;}
-#mainav .drop::after, #mainav li li .drop::after{content:"\f0d7";}
 #mainav .drop::after{top:25px; left:5px;}
 #mainav li li .drop::after{top:15px; left:5px;}
 #mainav ul ul{visibility:hidden; opacity:0;}
@@ -476,8 +512,6 @@ input:focus, textarea:focus, *:required:focus{border-color:#41C379;}
 .overlay.light{color:#474747;}
 .overlay.light::after{background-color:rgba(255,255,255,.7);}
 
-.imgover:hover::before{background-color:rgba(0,0,0,.55);}
-.imgover, .imgover:hover::after{color:#41C379;}
 
 
 /* Rows */
@@ -531,7 +565,7 @@ input:focus, textarea:focus, *:required:focus{border-color:#41C379;}
 #footer input{color:#474747; background-color:#FFFFFF;}
 #footer input:focus{border-color:#41C379;}
 #footer button{color:#FFFFFF; background-color:#41C379;}
-#footer button:hover{color:inherit; background-color:transparent; border-color:inherit;}
+#footer button:hover{color:inherit; border-color:inherit;}
 
 
 /* Navigation */
@@ -666,7 +700,7 @@ table a, #comments a{background-color:inherit;}
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- Top Background Image Wrapper -->
-<div class="bgded overlay" style="background-image:url('https://2021.igem.org/wiki/images/7/75/T--CityU_HK--animation-globe-variecolin.gif'); height:1200px">
+<div class="bgded overlay" style="background-image:url('https://2021.igem.org/wiki/images/7/75/T--CityU_HK--animation-globe-variecolin.gif'); height:1200px; position:static;">
 <! -- add video -->
 
   <section id="navwrapper" class="hoc clear" style="max-width:100%">
@@ -726,37 +760,15 @@ table a, #comments a{background-color:inherit;}
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
-
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
-<div class="wrapper row3">
-  <section class="hoc container clear">
-    <!-- ################################################################################################ -->
-    <div class="sectiontitle">
-      <p class="nospace font-xs">Id erat duis nibh diam at</p>
-      <h6 class="heading">Vulputate quis lacus nullam</h6>
-    </div>
-    <ul id="stats" class="nospace group">
-      <li><i class="fas fa-id-badge"></i>
-        <p><a href="#">123</a></p>
-        <p>Augue dui convallis</p>
-      </li>
-      <li><i class="fas fa-skull"></i>
-        <p><a href="#">1234</a></p>
-        <p>Id ullamcorper</p>
-      </li>
-      <li><i class="fas fa-umbrella"></i>
-        <p><a href="#">12345</a></p>
-        <p>Malesuada interdum</p>
-      </li>
-      <li><i class="fas fa-store-alt"></i>
-        <p><a href="#">6789</a></p>
-        <p>Tristique viverra</p>
-      </li>
-    </ul>
-    <!-- ################################################################################################ -->
-  </section>
+<div class="wrapper coloured" style="display:inline-block !important; display:inline; max-width:100%">
+<section class="hoc container clear">
+  <img style="margin: 20px 20px 20px 10px; float: left; width:200px; height:200px; border-radius:50%" src="https://2021.igem.org/wiki/images/3/38/T--CityU_HK--100x100.png" alt="">
+<div style="float:left; margin: 20px 20px 20px 10px;"><p><h6 class="heading">Problems</h6></p><p>1. </p><p>2. </p><p>3. </p><p>4. </p></div>
+<div style="clear: both; margin: 20px 20px;"><p><h6 class="heading">Solutions</h6></p><p>1. </p><p>2. </p><p>3. </p><p>4. </p></div>
+</section>
 </div>
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
@@ -778,67 +790,69 @@ table a, #comments a{background-color:inherit;}
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
-<div class="wrapper coloured">
-  <section id="testimonials" class="hoc container clear">
-    <!-- ################################################################################################ -->
-    <div class="sectiontitle">
-      <p class="nospace font-xs">At ante morbi consequat lobortis</p>
-      <h6 class="heading">Eros suspendisse scelerisque</h6>
-    </div>
-    <article class="one_half first"><img src="https://2021.igem.org/wiki/images/3/38/T--CityU_HK--100x100.png" alt="">
-      <blockquote>Proin sed sapien ut convallis lectus ac magna nulla mattis purus phasellus consectetuer fermentum augue integer vulputate lectus vitae lorem suspendisse potenti donec suscipit.</blockquote>
-      <h6 class="heading">J. Doe</h6>
-      <em>Nulla mauris hendrerit</em></article>
-    <article class="one_half"><img src="https://2021.igem.org/wiki/images/3/38/T--CityU_HK--100x100.png" alt="">
-      <blockquote>Pellentesque et ipsum mattis ipsum pellentesque pretium proin rutrum turpis non accumsan aliquet odio magna luctus neque in adipiscing mi odio ac felis sed mattis enim quis ipsum.</blockquote>
-      <h6 class="heading">G. Doe</h6>
-      <em>Aenean vestibulum mattis</em></article>
-    <!-- ################################################################################################ -->
-  </section>
-</div>
-<!-- ################################################################################################ -->
-<!-- ################################################################################################ -->
-<!-- ################################################################################################ -->
-<div class="wrapper row3">
-  <section class="hoc container clear">
-    <!-- ################################################################################################ -->
-    <div class="sectiontitle">
-      <p class="nospace font-xs">Nisl sed blandit iaculis lectus</p>
-      <h6 class="heading">Nam et erat nec eros elementum</h6>
-    </div>
-    <ul class="nospace group latest">
-      <li class="one_half first">
-        <article>
-          <div class="excerpt">
-            <ul class="nospace meta">
-              <li><i class="fas fa-user"></i> <a href="#">Admin</a></li>
-              <li><i class="fas fa-tag"></i> <a href="#">Category Name</a></li>
-            </ul>
-            <h6 class="heading">Gravida integer tristique</h6>
-            <p>Dui vel odio proin magna ligula pellentesque eu tincidunt sed ornare tempor nisl in id dui vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae donec [<a href="#">&hellip;</a>]</p>
-            <footer><a href="#">Read More</a></footer>
-          </div>
-          <time datetime="2045-04-06T08:15+00:00"><strong>06</strong> <em>Apr</em></time>
-        </article>
-      </li>
-      <li class="one_half">
-        <article>
-          <div class="excerpt">
-            <ul class="nospace meta">
-              <li><i class="fas fa-user"></i> <a href="#">Admin</a></li>
-              <li><i class="fas fa-tag"></i> <a href="#">Category Name</a></li>
-            </ul>
-            <h6 class="heading">Eleifend semper nisl sed</h6>
-            <p>Eget lorem in in felis in metus mollis blandit ut eu justo suspendisse semper sem sit amet ligula quisque eget felis eu tortor tristique pharetra praesent turpis pede varius sed [<a href="#">&hellip;</a>]</p>
-            <footer><a href="#">Read More</a></footer>
-          </div>
-          <time datetime="2045-04-05T08:15+00:00"><strong>05</strong> <em>Apr</em></time>
-        </article>
-      </li>
-    </ul>
-    <footer class="center"><a class="btn" href="#">View More</a></footer>
-    <!-- ################################################################################################ -->
-  </section>
+<div class="wrapper row2 container">
+    <div class="horizontal-row justify-content-center">
+                <div class="col-lg-4 col-md-7 col-sm-9">
+                    <div class="single-features mt-40">
+                        <div class="features-title-icon d-flex justify-content-between">
+                            <h4 class="features-title"><a href="#">Graphics Design</a></h4>
+                            <div class="features-icon">
+                                <i class="lni lni-brush"></i>
+                                <img class="shape" src="assets/images/f-shape-1.svg" alt="Shape">
+                            </div>
+                        </div>
+                        <div class="features-content">
+                            <p class="text">Short description for the ones who look for something new. Short description for the ones who look for something new.</p>
+                            <a class="features-btn" href="#">LEARN MORE</a>
+                        </div>
+                    </div> <!-- single features -->
+                </div>
+                <div class="col-lg-4 col-md-7 col-sm-9">
+                    <div class="single-features mt-40">
+                        <div class="features-title-icon d-flex justify-content-between">
+                            <h4 class="features-title"><a href="#">Website Design</a></h4>
+                            <div class="features-icon">
+                                <i class="lni lni-layout"></i>
+                                <img class="shape" src="assets/images/f-shape-1.svg" alt="Shape">
+                            </div>
+                        </div>
+                        <div class="features-content">
+                            <p class="text">Short description for the ones who look for something new. Short description for the ones who look for something new.</p>
+                            <a class="features-btn" href="#">LEARN MORE</a>
+                        </div>
+                    </div> <!-- single features -->
+                </div>
+                <div class="col-lg-4 col-md-7 col-sm-9">
+                    <div class="single-features mt-40">
+                        <div class="features-title-icon d-flex justify-content-between">
+                            <h4 class="features-title"><a href="#">Digital Marketing</a></h4>
+                            <div class="features-icon">
+                                <i class="lni lni-bolt"></i>
+                                <img class="shape" src="assets/images/f-shape-1.svg" alt="Shape">
+                            </div>
+                        </div>
+                        <div class="features-content">
+                            <p class="text">Short description for the ones who look for something new. Short description for the ones who look for something new.</p>
+                            <a class="features-btn" href="#">LEARN MORE</a>
+                        </div>
+                    </div> <!-- single features -->
+                </div>
+                <div class="col-lg-4 col-md-7 col-sm-9">
+                    <div class="single-features mt-40">
+                        <div class="features-title-icon d-flex justify-content-between">
+                            <h4 class="features-title"><a href="#">Digital Marketing</a></h4>
+                            <div class="features-icon">
+                                <i class="lni lni-bolt"></i>
+                                <img class="shape" src="assets/images/f-shape-1.svg" alt="Shape">
+                            </div>
+                        </div>
+                        <div class="features-content">
+                            <p class="text">Short description for the ones who look for something new. Short description for the ones who look for something new.</p>
+                            <a class="features-btn" href="#">LEARN MORE</a>
+                        </div>
+                    </div> <!-- single features -->
+                </div>
+            </div>
 </div>
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
@@ -852,7 +866,7 @@ table a, #comments a{background-color:inherit;}
     <!-- ################################################################################################ -->
     <hr class="btmspace-50">
     <!-- ################################################################################################ -->
-    <div class="one_quarter first">
+    <div class="one_quarter first" style="margin:0 5% 0 7%">
       <h6 class="heading">Contact Us</h6>
       <form action="#" method="post">
         <fieldset>
@@ -864,23 +878,27 @@ table a, #comments a{background-color:inherit;}
       </form>
     </div>
 
-    <div class="one_quarter">
+    <div class="one_quarter" style="margin:0 5% 0 5%">
       <h6 class="heading">Our Address</h6>
-   <iframe style="width:110%; height:200px" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3690.4485979058954!2d114.17023471592476!3d22.336684247215537!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3404073400f3ef35%3A0xeb61704ffb0ba959!2z6aaZ5riv5Z-O5biC5aSn5a2m!5e0!3m2!1szh-CN!2shk!4v1632042380521!5m2!1szh-CN!2shk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+<iframe style="width:100%; height:150px" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3690.4485979058954!2d114.17023471592476!3d22.336684247215537!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3404073400f3ef35%3A0xeb61704ffb0ba959!2z6aaZ5riv5Z-O5biC5aSn5a2m!5e0!3m2!1szh-CN!2shk!4v1632042380521!5m2!1szh-CN!2shk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+<p class="nospace btmspace-15" style="color:#F0F8FF">City University of Hong Kong</p>
+<p class="nospace btmspace-15" style="color:#F0F8FF">83 Tat Chee Ave, Kowloon Tong</p>
+<p class="nospace btmspace-15" style="color:#F0F8FF">Hong Kong</p>
+
 
     </div>
-    <div class="one_quarter">
-      <h6 class="heading">Nunc sapien varius</h6>
+    <div class="one_quarter" style="margin:0 5% 0 5%">
+      <h6 class="heading">Social Media Matrix</h6>
       <ul class="nospace clear latestimg">
-        <li><a class="imgover" href="#"><img src="https://2021.igem.org/wiki/images/3/38/T--CityU_HK--100x100.png" alt=""></a></li>
-        <li><a class="imgover" href="#"><img src="https://2021.igem.org/wiki/images/3/38/T--CityU_HK--100x100.png" alt=""></a></li>
-        <li><a class="imgover" href="#"><img src="https://2021.igem.org/wiki/images/3/38/T--CityU_HK--100x100.png" alt=""></a></li>
-        <li><a class="imgover" href="#"><img src="https://2021.igem.org/wiki/images/3/38/T--CityU_HK--100x100.png" alt=""></a></li>
-        <li><a class="imgover" href="#"><img src="https://2021.igem.org/wiki/images/3/38/T--CityU_HK--100x100.png" alt=""></a></li>
-        <li><a class="imgover" href="#"><img src="https://2021.igem.org/wiki/images/3/38/T--CityU_HK--100x100.png" alt=""></a></li>
-        <li><a class="imgover" href="#"><img src="https://2021.igem.org/wiki/images/3/38/T--CityU_HK--100x100.png" alt=""></a></li>
-        <li><a class="imgover" href="#"><img src="https://2021.igem.org/wiki/images/3/38/T--CityU_HK--100x100.png" alt=""></a></li>
-        <li><a class="imgover" href="#"><img src="https://2021.igem.org/wiki/images/3/38/T--CityU_HK--100x100.png" alt=""></a></li>
+        <li><a href="#"><img src="https://2021.igem.org/wiki/images/d/d8/T--CityU_HK--youtube.png" alt=""></a></li>
+        <li><a href="#"><img src="https://2021.igem.org/wiki/images/7/73/T--CityU_HK--instgram.png" alt=""></a></li>
+        <li><a href="#"><img src="https://2021.igem.org/wiki/images/8/8a/T--CityU_HK--whatsapp.png" alt=""></a></li>
+        <li><a href="#"><img src="https://2021.igem.org/wiki/images/d/de/T--CityU_HK--facebook.png" alt=""></a></li>
+        <li><a href="#"><img src="https://2021.igem.org/wiki/images/1/1d/T--CityU_HK--weibo.png" alt=""></a></li>
+        <li><a href="#"><img src="https://2021.igem.org/wiki/images/2/23/T--CityU_HK--twetter.png" alt=""></a></li>
+        <li><a href="#"><img src="https://2021.igem.org/wiki/images/a/a8/T--CityU_HK--wechact.png" alt=""></a></li>
+        <li><a href="#"><img src="https://2021.igem.org/wiki/images/d/d3/T--CityU_HK--linkedin.png" alt=""></a></li>
+        <li><a href="#"><img src="https://2021.igem.org/wiki/images/3/33/T--CityU_HK--zhihu.png" alt=""></a></li>
       </ul>
     </div>
     <!-- ################################################################################################ -->
@@ -892,8 +910,8 @@ table a, #comments a{background-color:inherit;}
 <div class="wrapper row5">
   <div id="copyright" class="hoc clear">
     <!-- ################################################################################################ -->
-    <p class="fl_left">Copyright &copy; 2018 - All Rights Reserved - <a href="#">Domain Name</a></p>
-    <p class="fl_right">Template by <a target="_blank" href="https://www.os-templates.com/" title="Free Website Templates">OS Templates</a></p>
+    <p class="fl_left">Copyright &copy; 2021 - All Rights Reserved - <a href="https://2021.igem.org/Team:CityU_HK">VarieCure</a></p>
+   <p class="fl_right">Tech Supported by<a target="_blank" href="https://www.cs.cityu.edu.hk/" title="CityU CS"> CS Dept, CityU</a></p>
     <!-- ################################################################################################ -->
   </div>
 </div>
@@ -935,4 +953,3 @@ function sendEmail(){
 </script>
 </body>
 </html>
-
