@@ -11,6 +11,11 @@
       height: 1200px;
   }
 }
+@media only screen and (max-width: 2000px) {
+  .indexBackgroundImages {
+      height: 700px;
+  }
+}
 .container {
     width: 100%;
     padding-right: 15px;
@@ -423,7 +428,7 @@ nav ul, nav ol{margin:0; padding:0; list-style:none;}
 #mainav li li .drop::after{top:15px; left:5px;}
 #mainav ul ul{visibility:hidden; opacity:0;}
 #mainav ul li:hover > ul{visibility:visible; opacity:1;}
-
+#mainav li li a, #mainav .active li a {color: #FFFFFF; background-color: rgba(65,195,121,.5) !important; border-color: rgba(0,0,0,.6);}
 #mainav form{display:none; width:100%; margin:0; padding:0;}
 #mainav form select, #mainav form select option{display:block; cursor:pointer; outline:none;}
 #mainav form select{width:100%; padding:5px; border:none;}
@@ -578,9 +583,8 @@ input:focus, textarea:focus, *:required:focus{border-color:#41C379;}
 #mainav li a{color:inherit;}
 #mainav .active a, #mainav a:hover, #mainav li:hover > a{color:#41C379; background-color:inherit;}
 #mainav li li a, #mainav .active li a{color:#FFFFFF; background-color:rgba(65,195,121,.5);/* #41C379 */ border-color:rgba(0,0,0,.6);}
-#mainav li li:hover > a, #mainav .active .active > a{color:#FFFFFF; background-color:#41C379;}
+#mainav li li:hover > a, #mainav .active .active > a{color:#FFFFFF; background-color:#41C379 !important;}
 #mainav form select{color:#474747; background-color:#FFFFFF;}
-
 #breadcrumb a{color:inherit; background-color:inherit;}
 #breadcrumb li:last-child a{color:#41C379;}
 
@@ -716,11 +720,11 @@ table a, #comments a{background-color:inherit;}
         <li class="active"><a href="https://2021.igem.org/Team:CityU_HK">VarieCure</a></li>
         <li><a class="drop" href="#">Project</a>
           <ul>
-            <li><a href="https://2021.igem.org/Team:CityU_HK/Description">Description</a></li>
-            <li><a href="https://2021.igem.org/Team:CityU_HK/Engineering">Engineering</a></li>
-            <li><a href="https://2021.igem.org/Team:CityU_HK/Contribution">Contribution</a></li>
-            <li><a href="https://2021.igem.org/Team:CityU_HK/Implementation">Implementation</a></li>
-            <li><a href="https://2021.igem.org/Team:CityU_HK/Safety">Safety</a></li>
+            <li class="navli" ><a href="https://2021.igem.org/Team:CityU_HK/Description">Description</a></li>
+            <li ><a href="https://2021.igem.org/Team:CityU_HK/Engineering">Engineering</a></li>
+            <li ><a href="https://2021.igem.org/Team:CityU_HK/Contribution">Contribution</a></li>
+            <li ><a href="https://2021.igem.org/Team:CityU_HK/Implementation">Implementation</a></li>
+            <li ><a href="https://2021.igem.org/Team:CityU_HK/Safety">Safety</a></li>
           </ul>
         </li>
         <li><a class="drop" href="#">Labwork</a>
@@ -731,11 +735,12 @@ table a, #comments a{background-color:inherit;}
         </li>
         <li><a href="#">Results</a></li>
         <li><a href="#">Parts</a></li>
+        <li><a href="https://2021.igem.org/Team:CityU_HK/Model">Model</a>
         <li><a href="#">Human Practice</a>
           <ul>
-            <li><a href="https://2021.igem.org/Team:CityU_HK/Human_Practices">Integrated Human Practice</a></li>
-            <li><a href="https://2021.igem.org/Team:CityU_HK/Partnership">Partnership</a></li>
-<li><a href="https://2021.igem.org/Team:CityU_HK/Communication">Education & Science Communication</a></li>
+            <li ><a href="https://2021.igem.org/Team:CityU_HK/Human_Practices">Integrated Human Practice</a></li>
+            <li ><a href="https://2021.igem.org/Team:CityU_HK/Partnership">Partnership</a></li>
+<li ><a href="https://2021.igem.org/Team:CityU_HK/Communication">Education & Science Communication</a></li>
           </ul>
 
 </li>
@@ -769,10 +774,10 @@ table a, #comments a{background-color:inherit;}
 <!-- ################################################################################################ -->
 <div class="wrapper coloured" style="display:inline-block !important; display:inline; max-width:100%">
 <section class="hoc container clear">
-  <img style="margin: 20px 20px 20px 10px; float: left; width:200px; height:200px; border-radius:50%" src="https://2021.igem.org/wiki/images/3/38/T--CityU_HK--100x100.png" alt="">
+  <img style="margin: 20px 20px 20px 10px; float: left; width:200px; height:200px; border-radius:50%" src="https://2021.igem.org/wiki/images/5/57/T--CityU_HK--problem1.svg" alt="">
 <div style="float:left; margin: 20px 20px 20px 10px; max-width:60%;"><p><h6 class="heading"><b>Problems</b><p><font size="3" color="black">The world is facing 3 problems that affect our life expectancy.</font></p></h6></p><p><font size="3" color="black">1. Unavailability of medicines in developing countries due to low affordability. About 80% of Africans who are on or below the middle-income, rely on public health facilities. Nevertheless, due to the shortages of critical drugs in public health facilities, many patients die of easily curable diseases.</font>
 </p><p><font size="3" color="black">2. The number and types of human diseases have risen across the world. Due to global warming, temperature rises and bacteria becomes more active and leads to disease outbreaks.</font>
-</p><p><font size="3" color="black">3. Higher demands in the market for effective anti-microbial and immunostimulatory drugs. However, the traditional drug discovery process is expensive, complicated and time-consuming…</font>
+</p><p><font size="3" color="black">3. Higher demands in the market for effective anti-microbial and anti-cancer drugs. However, the traditional drug discovery process is expensive, complicated and time-consuming…</font>
 </p></div>
 <div style="clear: both; margin: 20px 20px;">
     <p><img style="width:3%; float:left; visibility:hidden; margin-right: 10px;" src="https://2021.igem.org/wiki/images/d/df/T--CityU_HK--lightbulb.png"/><h6 class="heading" style="float:left"><b>Solutions</b></h6></p>
