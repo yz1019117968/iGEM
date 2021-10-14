@@ -1,69 +1,16 @@
 <html lang="">
 <!-- To declare your language - read more here: https://www.w3.org/International/questions/qa-html-language-declarations -->
 <head>
-<title>Foxclore</title>
+<title>Foxclore | Pages | Basic Grid</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<!--<link href="layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">-->
   <style type="text/css">
-@media only screen and (min-width: 2000px) {
-  .indexBackgroundImages {
-      height: 1200px;
-  }
-}
-@media only screen and (max-width: 2000px) {
-  .indexBackgroundImages {
-      height: 700px;
-  }
-}
-.container {
-    width: 100%;
-    padding-right: 15px;
-    padding-left: 15px;
-    margin-right: auto;
-    margin-left: auto;lear
-}
-.single-features {
-    padding: 40px 20px 52px;
-    background-color: #fff;
-}
-.horizontal-row {
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    margin-right: -15px;
-    margin-left: -15px;
-}
-.justify-content-center {
-    -ms-flex-pack: center!important;
-    justify-content: center!important;
-}
-.col-lg-4 {
-    -ms-flex: 0 0 25%;
-    flex: 0 0 25%;
-    max-width: 13.33333%;
-    margin: 0 25px 0 25px;
-}
-.single-features .features-content .text {
-    font-size: 14px;
-    line-height: 20px;
-    color: #121212;
-    margin-top: 16px;
-}
-.single-features .features-content .features-btn {
-    color: #0067f4;
-    font-size: 16px;
-    font-weight: 700;
-    margin-top: 29px;
-}
-a:hover img{filter:alpha(Opacity=50);-moz-opacity:0.5;opacity: 0.5}
 /* Style the video: 100% width and height to cover the entire window */
 #myVideo {
   position: relative;
   right: 0;
   bottom: 0;
-  width: 100%;
+  min-width: 100%;
   min-height: 100%;
 }
 
@@ -143,7 +90,11 @@ a{outline:none; text-decoration:none;}
 img{width:auto; max-width:100%; height:auto; margin:0; padding:0; border:none; line-height:normal; vertical-align:middle;}
 .imgl{margin:0 15px 10px 0; clear:left;}
 .imgr{margin:0 0 10px 15px; clear:right;}
-
+.imgover{display:inline-block; position:relative; max-width:100%;}
+.imgover::before, .imgover::after{display:block; position:absolute; content:""; text-align:center; opacity:0;}
+.imgover::before{top:0; right:0; bottom:0; left:0;}
+.imgover::after{top:50%; left:50%; width:50px; height:50px; line-height:50px; margin:-25px 0 0 -25px; font-family:"Font Awesome 5 Free"; font-weight:900; content:"\f06e";/* fa-eye */ font-size:28px;}
+.imgover:hover::before, .imgover:hover::after{opacity:1;}
 
 
 /* Fonts
@@ -381,6 +332,7 @@ address, article, aside, figcaption, figure, footer, header, main, nav, section{
 #footer .latestimg > li:nth-last-child(-n+3){margin-bottom:0;}/* Removes bottom margin from the last three items - margin is restored in the media queries when items stack */
 #footer .latestimg > li:nth-child(3n+1){margin-left:0; clear:left;}/* Removes the need to add class="first" */
 #footer .latestimg > li img{width:100%;}/* Force the image to resize to take the full space - may have to be changed for tablets, depends on personal preference */
+#footer .latestimg > li a.imgover{display:block;}
 
 
 /* Copyright
@@ -428,7 +380,7 @@ nav ul, nav ol{margin:0; padding:0; list-style:none;}
 #mainav li li .drop::after{top:15px; left:5px;}
 #mainav ul ul{visibility:hidden; opacity:0;}
 #mainav ul li:hover > ul{visibility:visible; opacity:1;}
-#mainav li li a, #mainav .active li a {color: #FFFFFF; background-color: rgba(65,195,121,.5) !important; border-color: rgba(0,0,0,.6);}
+
 #mainav form{display:none; width:100%; margin:0; padding:0;}
 #mainav form select, #mainav form select option{display:block; cursor:pointer; outline:none;}
 #mainav form select{width:100%; padding:5px; border:none;}
@@ -522,6 +474,8 @@ input:focus, textarea:focus, *:required:focus{border-color:#41C379;}
 .overlay.light{color:#474747;}
 .overlay.light::after{background-color:rgba(255,255,255,.7);}
 
+.imgover:hover::before{background-color:rgba(0,0,0,.55);}
+.imgover, .imgover:hover::after{color:#41C379;}
 
 
 /* Rows */
@@ -529,10 +483,10 @@ input:focus, textarea:focus, *:required:focus{border-color:#41C379;}
 .row1, .row1 a{}
 .row2{color:#474747; background-color:#F4F4F4;}
 .row3{color:#474747; background-color:#FFFFFF;}
-.row4{color:#C1C2C4; background-color:#07A593;}
+.row4{color:#C1C2C4; background-color:#323639;}
 .row5, .row5 a{color:#C1C2C4; background-color:#2A2D34;}
 
-.coloured{color:#FFFFFF; background:linear-gradient(90deg, #fff, #fff);}
+.coloured{color:#FFFFFF; background:linear-gradient(90deg, #41C379, #37AE6A);}
 
 
 /* Header */
@@ -575,7 +529,7 @@ input:focus, textarea:focus, *:required:focus{border-color:#41C379;}
 #footer input{color:#474747; background-color:#FFFFFF;}
 #footer input:focus{border-color:#41C379;}
 #footer button{color:#FFFFFF; background-color:#41C379;}
-#footer button:hover{color:inherit; border-color:inherit;}
+#footer button:hover{color:inherit; background-color:transparent; border-color:inherit;}
 
 
 /* Navigation */
@@ -583,8 +537,9 @@ input:focus, textarea:focus, *:required:focus{border-color:#41C379;}
 #mainav li a{color:inherit;}
 #mainav .active a, #mainav a:hover, #mainav li:hover > a{color:#41C379; background-color:inherit;}
 #mainav li li a, #mainav .active li a{color:#FFFFFF; background-color:rgba(65,195,121,.5);/* #41C379 */ border-color:rgba(0,0,0,.6);}
-#mainav li li:hover > a, #mainav .active .active > a{color:#FFFFFF; background-color:#41C379 !important;}
+#mainav li li:hover > a, #mainav .active .active > a{color:#FFFFFF; background-color:#41C379;}
 #mainav form select{color:#474747; background-color:#FFFFFF;}
+
 #breadcrumb a{color:inherit; background-color:inherit;}
 #breadcrumb li:last-child a{color:#41C379;}
 
@@ -709,9 +664,10 @@ table a, #comments a{background-color:inherit;}
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- Top Background Image Wrapper -->
-<div class="bgded overlay indexBackgroundImages" style="background-image:url('https://2021.igem.org/wiki/images/7/75/T--CityU_HK--animation-globe-variecolin.gif'); position:static;">
+<div style="width: 100%; background-color:#908271;">
+  <!-- ################################################################################################ -->
 
-  <section id="navwrapper" class="hoc clear" style="max-width:100%">
+<section id="navwrapper" class="hoc clear" style="max-width:100%">
 <a href="#"><img style="width:50px; margin-top:10px" src="https://2021.igem.org/wiki/images/b/b5/T--CityU_HK--varie-cure-revised.PNG" alt=""></a>
     <!-- ################################################################################################ -->
     <nav id="mainav">
@@ -746,7 +702,7 @@ table a, #comments a{background-color:inherit;}
 
         <li><a href="#">Team</a>
           <ul>
-            <li><a href="https://2021.igem.org/Team:CityU_HK/Team">Member</a></li>
+            <li><a href="#">Member</a></li>
             <li><a href="#">Attribution</a></li>
 <li><a href="#">Collaboration</a></li>
           </ul>
@@ -756,186 +712,91 @@ table a, #comments a{background-color:inherit;}
     <!-- ################################################################################################ -->
     <!-- ################################################################################################ -->
   </section>
-  <!-- ################################################################################################ -->
-  <!-- ################################################################################################ -->
-  <!-- ################################################################################################ -->
-  <div id="pageintro" class="hoc">
+    <div style="text-align: center;">
+    <img src="https://2021.igem.org/wiki/images/e/e1/T--CityU_HK--description-bg.png">
+    </div>
 
-  </div>
+    <!-- ################################################################################################ -->
+    <!-- ################################################################################################ -->
+
   <!-- ################################################################################################ -->
 </div>
 <!-- End Top Background Image Wrapper -->
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
-<!-- ################################################################################################ -->
-<!-- ################################################################################################ -->
-<!-- ################################################################################################ -->
-<div class="wrapper coloured" style="display:inline-block !important; display:inline; max-width:100%">
-<section class="hoc container clear">
-  <img style="margin: 20px 20px 20px 10px; float: left; width:200px; height:200px; border-radius:50%" src="https://2021.igem.org/wiki/images/5/57/T--CityU_HK--problem1.svg" alt="">
-<div style="float:left; margin: 20px 20px 20px 10px; max-width:60%;"><p><h6 class="heading"><b>Problems</b><p><font size="3" color="black">The world is facing 3 problems that affect our life expectancy.</font></p></h6></p><p><font size="3" color="black">1. Unavailability of medicines in developing countries due to low affordability. About 80% of Africans who are on or below the middle-income, rely on public health facilities. Nevertheless, due to the shortages of critical drugs in public health facilities, many patients die of easily curable diseases.</font>
-</p><p><font size="3" color="black">2. The number and types of human diseases have risen across the world. Due to global warming, temperature rises and bacteria becomes more active and leads to disease outbreaks.</font>
-</p><p><font size="3" color="black">3. Higher demands in the market for effective anti-microbial and anti-cancer drugs. However, the traditional drug discovery process is expensive, complicated and time-consuming…</font>
-</p></div>
-<div style="clear: both; margin: 20px 20px;">
-    <p><img style="width:3%; float:left; visibility:hidden; margin-right: 10px;" src="https://2021.igem.org/wiki/images/d/df/T--CityU_HK--lightbulb.png"/><h6 class="heading" style="float:left"><b>Solutions</b></h6></p>
-    <div style="clear:both"></div>
-    <div><img style="width:3%; float:left; visibility:hidden; margin-right: 10px;" src="https://2021.igem.org/wiki/images/d/df/T--CityU_HK--lightbulb.png"/><p style="max-width:80%; float:left;"><font size="3" color="black">1. Natural products are sets of small molecules derived from the natural environment or any life forms that are not involved in primary metabolism. Fungi represents a major source of natural products.</font></p></div>
-    <div style="clear:both"></div>
-    <div align="center"><img style="width:30%;" src="https://2021.igem.org/wiki/images/2/24/T--CityU_HK--mushroom_capsule.png" alt="Shape"></div>
-    <div><img style="width:3%; float:left; visibility:hidden; margin-right: 10px;" src="https://2021.igem.org/wiki/images/d/df/T--CityU_HK--lightbulb.png"/><p style="max-width:80%; float:left;"><font size="3" color="black">2. About 40% of the drugs today are derived from natural products or based on natural product derivatives. The advantages are high molecular mass, great molecular rigidity, high hydrophilicity and complex structure.
-</font></p></div>
-    <div style="clear:both"></div>
-    <div><img style="width:3%; float:left; margin-right: 10px;" src="https://2021.igem.org/wiki/images/d/df/T--CityU_HK--lightbulb.png"/><p style="float:left; max-width:80%; float:left;"><font size="3" color="black">3. Our project aims to generate a new class of genetically engineered variecolin bioactive compounds from the secondary metabolites of Aspergillus oryzae fungi which are potent antibacterial and immunostimulant drugs.
-</font></p></div>
-</div>
-</section>
-</div>
-<!-- ################################################################################################ -->
-<!-- ################################################################################################ -->
-<!-- ################################################################################################ -->
-<div class="wrapper row2">
- <!-- The video -->
-<video autoplay muted loop id="myVideo">
-  <source src="https://2021.igem.org/wiki/images/4/4e/T--CityU_HK--video.mp4" type="video/mp4">
-</video>
-
-<!-- Optional: some overlay text to describe the video -->
-<div class="contentvideo">
-  <h1>Heading</h1>
-  <p>Lorem ipsum...</p>
-  <!-- Use a button to pause/play the video with JavaScript -->
-  <button id="myBtn" onclick="myFunction()">Pause</button>
-</div>
-</div>
-<!-- ################################################################################################ -->
-<!-- ################################################################################################ -->
-<!-- ################################################################################################ -->
-<div class="wrapper row2 container">
-    <div class="horizontal-row justify-content-center">
-                <div class="col-lg-4 col-md-7 col-sm-9">
-                    <div class="single-features mt-40">
-                        <div class="features-title-icon d-flex justify-content-between">
-                            <h4 class="features-title"><a href="#">Description</a></h4>
-                            <div class="features-icon">
-                                <i class="lni lni-brush"></i>
-                                <img class="shape" src="https://2021.igem.org/wiki/images/b/b8/T--CityU_HK--mushroom.svg" alt="Shape">
-                            </div>
-                        </div>
-                        <div class="features-content">
-                            <p class="text"> Describe why we decide to develop a biosynthetic platform to produce variecolin products. </p>
-                            <a class="features-btn" href="https://2021.igem.org/Team:CityU_HK/Description">More detail</a>
-                        </div>
-                    </div> <!-- single features -->
-                </div>
-                <div class="col-lg-4 col-md-7 col-sm-9">
-                    <div class="single-features mt-40">
-                        <div class="features-title-icon d-flex justify-content-between">
-                            <h4 class="features-title"><a href="#">Engineering</a></h4>
-                            <div class="features-icon">
-                                <i class="lni lni-layout"></i>
-                                <img class="shape" src="https://2021.igem.org/wiki/images/6/68/T--CityU_HK--dna.svg" alt="Shape">
-                            </div>
-                        </div>
-                        <div class="features-content">
-                            <p class="text">Introduce how we design our project and prove our design.</p>
-                            <a class="features-btn" href="https://2021.igem.org/Team:CityU_HK/Engineering">More detail</a>
-                        </div>
-                    </div> <!-- single features -->
-                </div>
-                <div class="col-lg-4 col-md-7 col-sm-9">
-                    <div class="single-features mt-40">
-                        <div class="features-title-icon d-flex justify-content-between">
-                            <h4 class="features-title"><a href="#">Results</a></h4>
-                            <div class="features-icon">
-                                <i class="lni lni-bolt"></i>
-                                <img class="shape" src="https://2021.igem.org/wiki/images/0/03/T--CityU_HK--paper.svg" alt="Shape">
-                            </div>
-                        </div>
-                        <div class="features-content">
-                            <p class="text">Show the outcome of our proof of design and conclude the effectiveness of variecolin analogues.
-</p>
-                            <a class="features-btn" href="#">More detail</a>
-                        </div>
-                    </div> <!-- single features -->
-                </div>
-                <div class="col-lg-4 col-md-7 col-sm-9">
-                    <div class="single-features mt-40">
-                        <div class="features-title-icon d-flex justify-content-between">
-                            <h4 class="features-title"><a href="#">Human practice</a></h4>
-                            <div class="features-icon">
-                                <i class="lni lni-bolt"></i>
-                                <img class="shape" src="https://2021.igem.org/wiki/images/b/bf/T--CityU_HK--hand.svg" alt="Shape">
-                            </div>
-                        </div>
-                        <div class="features-content">
-                            <p class="text">Present how we communicate our project with the world
-</p>
-                            <a class="features-btn" href="https://2021.igem.org/Team:CityU_HK/Human_Practices">More detail</a>
-                        </div>
-                    </div> <!-- single features -->
-                </div>
+<div align="center" style="margin: 20px 20px;">
+    <section style="max-width:60%;">
+        <div align="left">
+            <h5>Abstract</h5>
+            <p>Despite recent advances in medical science, humans are still facing some global health challenges, including emerging infectious diseases and debilitating diseases such as cancer. Hence, there is an unmet clinical need for new and effective drugs. However, a long-existing problem in drug discovery is the cost-effectiveness issue in finding effective drugs for clinical use. To address this, our team aims to develop a simple and cost-effective fungal synthetic biology platform to produce various derivatives of variecolin, a fungal natural product that shows potent therapeutic and antimicrobial properties. The platform consists of the genetically modified Aspergillus oryzae host with (1) a “terpene synthase” biobrick for the backbone synthesis and (2) a series of different “cytochrome P450 monooxygenase” biobricks to derivatize the variecolin scaffold. We have successfully obtained three novel variecolin analogues as confirmed by LC-MS and NMR analyses, and experiments are currently underway to characterize their biological activities.</p>
+        </div>
+    </section>
+    <section style="max-width:60%;">
+        <div align="left">
+            <h5>Background</h5>
+            <h6>The Importance of Health</h6>
+            <div style="text-align: center;">
+            <img style= "width: 50%;margin: 15px 15px" src="https://2021.igem.org/wiki/images/2/29/T--CityU_HK--Maslow.png">
             </div>
+            <div>According to Maslow's Hierarchy of Needs theory, health is the foundation of life needs. In this pyramid, health is the safety needs which is the bottom level. Only by satisfying the needs of the bottom can pursue the needs of a higher level and reach the spiritual level of culture, morality, and ideals. If we cannot fulfill the requirement of health, we cannot enjoy a high-quality life. Being free from illness or injury directly affects our capacity to enjoy life.</div>
+        </div>
+        <div align="left"> A population’s health can be measured by Life expectancy which measures how many years, on average, a person is expected to live based on current age and sex-specific death rate.</div>
+        <div align="left">This study indicated that the world Life Expectancy was about 70 years in 2019, compared to only 30 years in 1900. Global life expectancy has increased drastically over the last couple of centuries with the advent of medicine and science.
+</div>
+    </section>
+        <section style="max-width:60%;">
+        <div align="left">
+            <h5>Background</h5>
+            <h6>The Importance of Health</h6>
+            <div style="text-align: center;">
+            <img style= "width: 50%; margin: 15px 15px" src="https://2021.igem.org/wiki/images/2/29/T--CityU_HK--Maslow.png">
+            </div>
+            <div>According to Maslow's Hierarchy of Needs theory, health is the foundation of life needs. In this pyramid, health is the safety needs which is the bottom level. Only by satisfying the needs of the bottom can pursue the needs of a higher level and reach the spiritual level of culture, morality, and ideals. If we cannot fulfill the requirement of health, we cannot enjoy a high-quality life. Being free from illness or injury directly affects our capacity to enjoy life.</div>
+        </div>
+        <div align="left"> A population’s health can be measured by Life expectancy which measures how many years, on average, a person is expected to live based on current age and sex-specific death rate.</div>
+        <div align="left">This study indicated that the world Life Expectancy was about 70 years in 2019, compared to only 30 years in 1900. Global life expectancy has increased drastically over the last couple of centuries with the advent of medicine and science.
+</div>
+    </section>
+        <section style="max-width:60%;">
+        <div align="left">
+            <h5>Background</h5>
+            <h6>The Importance of Health</h6>
+            <div style="text-align: center;">
+            <img style= "width: 50%; margin: 15px 15px" src="https://2021.igem.org/wiki/images/2/29/T--CityU_HK--Maslow.png">
+            </div>
+            <div>According to Maslow's Hierarchy of Needs theory, health is the foundation of life needs. In this pyramid, health is the safety needs which is the bottom level. Only by satisfying the needs of the bottom can pursue the needs of a higher level and reach the spiritual level of culture, morality, and ideals. If we cannot fulfill the requirement of health, we cannot enjoy a high-quality life. Being free from illness or injury directly affects our capacity to enjoy life.</div>
+        </div>
+        <div align="left"> A population’s health can be measured by Life expectancy which measures how many years, on average, a person is expected to live based on current age and sex-specific death rate.</div>
+        <div align="left">This study indicated that the world Life Expectancy was about 70 years in 2019, compared to only 30 years in 1900. Global life expectancy has increased drastically over the last couple of centuries with the advent of medicine and science.
+</div>
+    </section>
+        <section style="max-width:60%;">
+        <div align="left">
+            <h5>Background</h5>
+            <h6>The Importance of Health</h6>
+            <div style="text-align: center;">
+            <img style= "width: 50%; margin: 15px 15px" src="https://2021.igem.org/wiki/images/2/29/T--CityU_HK--Maslow.png">
+            </div>
+            <div>According to Maslow's Hierarchy of Needs theory, health is the foundation of life needs. In this pyramid, health is the safety needs which is the bottom level. Only by satisfying the needs of the bottom can pursue the needs of a higher level and reach the spiritual level of culture, morality, and ideals. If we cannot fulfill the requirement of health, we cannot enjoy a high-quality life. Being free from illness or injury directly affects our capacity to enjoy life.</div>
+        </div>
+        <div align="left"> A population’s health can be measured by Life expectancy which measures how many years, on average, a person is expected to live based on current age and sex-specific death rate.</div>
+        <div align="left">This study indicated that the world Life Expectancy was about 70 years in 2019, compared to only 30 years in 1900. Global life expectancy has increased drastically over the last couple of centuries with the advent of medicine and science.
+</div>
+    </section>
+
 </div>
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
-<div class="bgded row4">
-  <footer id="footer" class="hoc clear">
-    <!-- ################################################################################################ -->
-    <div align="center">
-      <h6 class="heading">Foxclore</h6>
-    </div>
-    <!-- ################################################################################################ -->
-    <hr class="btmspace-50">
-    <!-- ################################################################################################ -->
-    <div class="one_quarter first" style="margin:0 5% 0 7%">
-      <h6 class="heading">Contact Us</h6>
-      <form action="#" method="post">
-        <fieldset>
-          <input class="btmspace-15" type="text" value=""  id="mailname" placeholder="Tell us your name ...">
-          <textarea class="btmspace-15" rows="10" type="text" value="" id="mailmsg" placeholder="Say somthing ..."></textarea>
-            <button class="mailbtn" onclick="sendEmail()">Email Us</button>
-            <a href="mailto" id="send"></a>
-        </fieldset>
-      </form>
-    </div>
-
-    <div class="one_quarter" style="margin:0 5% 0 5%">
-      <h6 class="heading">Our Address</h6>
-<iframe style="width:100%; height:150px" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3690.4485979058954!2d114.17023471592476!3d22.336684247215537!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3404073400f3ef35%3A0xeb61704ffb0ba959!2z6aaZ5riv5Z-O5biC5aSn5a2m!5e0!3m2!1szh-CN!2shk!4v1632042380521!5m2!1szh-CN!2shk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-<p class="nospace btmspace-15" style="color:#F0F8FF">City University of Hong Kong</p>
-<p class="nospace btmspace-15" style="color:#F0F8FF">83 Tat Chee Ave, Kowloon Tong</p>
-<p class="nospace btmspace-15" style="color:#F0F8FF">Hong Kong</p>
-
-
-    </div>
-    <div class="one_quarter" style="margin:0 5% 0 5%">
-      <h6 class="heading">Social Media Matrix</h6>
-      <ul class="nospace clear latestimg">
-        <li><a href="#"><img src="https://2021.igem.org/wiki/images/d/d8/T--CityU_HK--youtube.png" alt=""></a></li>
-        <li><a href="#"><img src="https://2021.igem.org/wiki/images/7/73/T--CityU_HK--instgram.png" alt=""></a></li>
-        <li><a href="#"><img src="https://2021.igem.org/wiki/images/8/8a/T--CityU_HK--whatsapp.png" alt=""></a></li>
-        <li><a href="#"><img src="https://2021.igem.org/wiki/images/d/de/T--CityU_HK--facebook.png" alt=""></a></li>
-        <li><a href="#"><img src="https://2021.igem.org/wiki/images/1/1d/T--CityU_HK--weibo.png" alt=""></a></li>
-        <li><a href="#"><img src="https://2021.igem.org/wiki/images/2/23/T--CityU_HK--twetter.png" alt=""></a></li>
-        <li><a href="#"><img src="https://2021.igem.org/wiki/images/a/a8/T--CityU_HK--wechact.png" alt=""></a></li>
-        <li><a href="#"><img src="https://2021.igem.org/wiki/images/d/d3/T--CityU_HK--linkedin.png" alt=""></a></li>
-        <li><a href="#"><img src="https://2021.igem.org/wiki/images/3/33/T--CityU_HK--zhihu.png" alt=""></a></li>
-      </ul>
-    </div>
-    <!-- ################################################################################################ -->
-  </footer>
-</div>
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
-<div class="wrapper row5">
+<div style="background-color:#2A2D34;" class="wrapper row5">
   <div id="copyright" class="hoc clear">
     <!-- ################################################################################################ -->
-    <p class="fl_left">Copyright &copy; 2021 - All Rights Reserved - <a href="https://2021.igem.org/Team:CityU_HK">VarieCure</a></p>
-   <p class="fl_right">Tech Supported by<a target="_blank" href="https://www.cs.cityu.edu.hk/" title="CityU CS"> CS Dept, CityU</a></p>
+    <p class="fl_left">Copyright &copy; 2018 - All Rights Reserved - <a href="#">Domain Name</a></p>
+    <p class="fl_right">Template by <a target="_blank" href="https://www.os-templates.com/" title="Free Website Templates">OS Templates</a></p>
     <!-- ################################################################################################ -->
   </div>
 </div>
@@ -944,36 +805,8 @@ table a, #comments a{background-color:inherit;}
 <!-- ################################################################################################ -->
 <a id="backtotop" href="#top"><i class="fas fa-chevron-up"></i></a>
 <!-- JAVASCRIPTS -->
-<!--<script src="layout/scripts/jquery.min.js"></script>-->
-<!--<script src="layout/scripts/jquery.backtotop.js"></script>-->
-<!--<script src="layout/scripts/jquery.mobilemenu.js"></script>-->
-<script>
-// Get the video
-var video = document.getElementById("myVideo");
-
-// Get the button
-var btn = document.getElementById("myBtn");
-
-// Pause and play the video, and change the button text
-function myFunction() {
-  if (video.paused) {
-    video.play();
-    btn.innerHTML = "Pause";
-  } else {
-    video.pause();
-    btn.innerHTML = "Play";
-  }
-}
-// send email
-function sendEmail(){
-    var name= document.getElementById("mailname").value;
-    var msg= document.getElementById("mailmsg").value;
-    var body="My Name is: "+name+"%0a%0d"
-            +"Message: "+msg;
-    var send = document.getElementById("send");
-    send.setAttribute("href","mailto:zhyang8-c@my.cityu.edu.hk?body="+body);
-    document.getElementById("send").click();
-}
-</script>
+<script src="../layout/scripts/jquery.min.js"></script>
+<script src="../layout/scripts/jquery.backtotop.js"></script>
+<script src="../layout/scripts/jquery.mobilemenu.js"></script>
 </body>
 </html>
