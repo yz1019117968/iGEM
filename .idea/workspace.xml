@@ -20,8 +20,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9be4a2d5-59c1-4dc9-a4e2-ef82588e6f27" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/foxclore/Description.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foxclore/Engineering.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/foxclore/Description.html" beforeDir="false" afterPath="$PROJECT_DIR$/foxclore/Description.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/foxclore/cityu_hk.html" beforeDir="false" afterPath="$PROJECT_DIR$/foxclore/cityu_hk.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/foxclore/team_cityu.html" beforeDir="false" afterPath="$PROJECT_DIR$/foxclore/team_cityu.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -69,5 +71,9 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1008" y="396" key="FileChooserDialogImpl/-1080.-1.1080.1860/0.0.2560.1400@0.0.2560.1400" timestamp="1632541434955" />
+    <state x="859" y="308" width="840" height="1034" key="search.everywhere.popup" timestamp="1634539681417">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="859" y="308" width="840" height="1034" key="search.everywhere.popup/-1080.-1.1080.1860/0.0.2560.1400@0.0.2560.1400" timestamp="1634539681417" />
   </component>
 </project>
