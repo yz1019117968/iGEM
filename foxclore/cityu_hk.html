@@ -797,17 +797,17 @@ table a, #comments a{background-color:inherit;}
 <!-- ################################################################################################ -->
 <div class="wrapper row2">
  <!-- The video -->
-<video autoplay muted loop id="myVideo">
+<video autoplay muted loop controls id="myVideo">
   <source src="https://2021.igem.org/wiki/images/4/4e/T--CityU_HK--video.mp4" type="video/mp4">
 </video>
 
 <!-- Optional: some overlay text to describe the video -->
-<div class="contentvideo">
-  <h1>Heading</h1>
-  <p>Lorem ipsum...</p>
-  <!-- Use a button to pause/play the video with JavaScript -->
-  <button id="myBtn" onclick="myFunction()">Pause</button>
-</div>
+<!--<div class="contentvideo">-->
+<!--  <h1>Heading</h1>-->
+<!--  <p>Lorem ipsum...</p>-->
+<!--  &lt;!&ndash; Use a button to pause/play the video with JavaScript &ndash;&gt;-->
+<!--  <button id="myBtn" onclick="myFunction()">Pause</button>-->
+<!--</div>-->
 </div>
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
@@ -955,15 +955,15 @@ var video = document.getElementById("myVideo");
 var btn = document.getElementById("myBtn");
 
 // Pause and play the video, and change the button text
-function myFunction() {
-  if (video.paused) {
-    video.play();
-    btn.innerHTML = "Pause";
-  } else {
-    video.pause();
-    btn.innerHTML = "Play";
-  }
-}
+//function myFunction() {
+//  if (video.paused) {
+//    video.play();
+//    btn.innerHTML = "Pause";
+//  } else {
+//    video.pause();
+//    btn.innerHTML = "Play";
+//  }
+//}
 // send email
 function sendEmail(){
     var name= document.getElementById("mailname").value;
